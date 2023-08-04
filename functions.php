@@ -15,6 +15,6 @@ if ( get_stylesheet() !== get_template() ) {
     } );
 }
 function enqueue_child_theme_styles() {
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/css/theme.css');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/css/style.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_theme_styles');
