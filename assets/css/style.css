@@ -1,0 +1,110 @@
+/*// Define a mixin for the fade-in animation
+@mixin fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  // Apply the fade-in effect to specific sections
+  .banner,
+  .story,
+  .studio,
+  .nomination 
+  {
+    @include fade-in;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  // Add hover effect for fade-in
+  .banner:hover,
+  .story:hover,
+  .studio:hover,
+  .nomination:hover 
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .banner {
+    position: relative;
+  }
+  
+  .banner video {
+    width: 100%;
+    height: auto;
+  }
+  
+  .banner img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: logoVibration 5s ease-in-out infinite; 
+  }
+  
+  @keyframes logoVibration {
+    0%, 100% {
+      transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    20% {
+      transform: translate(-50%, -50%) rotate(-2deg) scale(1.02);
+    }
+    40% {
+      transform: translate(-50%, -50%) rotate(2deg) scale(0.98);
+    }
+    60% {
+      transform: translate(-50%, -50%) rotate(-2deg) scale(1.02);
+    }
+    80% {
+      transform: translate(-50%, -50%) rotate(2deg) scale(0.98);
+    }
+  }*/
+.bannerlogo {
+  position: sticky;
+  left: 80px;
+  z-index: 10;
+  opacity: 1;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out; }
+
+.nomination__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left; }
+
+.nomination__title {
+  position: relative; }
+
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center; }
+
+.nomination img {
+  height: 100%; }
+
+img {
+  max-width: 100%; }
+
+.nomination::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em; }
+
+.nomination::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em; }
+
+.site-footer::before {
+  content: ''; }
+
+.site-footer::after {
+  content: ''; }
+
+/*# sourceMappingURL=style.css.map */
