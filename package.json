@@ -1,0 +1,11 @@
+{
+  "name": "foce-child",
+  "version": "1.0.0",
+  "description": "Child theme for Foce",
+  "scripts": {
+    "compile:scss": "node-sass assets/css/style.scss assets/css/theme.css --output assets/css --source-map true"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+/* styles for the nomination section */
+#nomination {
+  display: flex;
+  flex-direction: row; }
+
+.nomination__title {
+  /* styles for the title section */ }
+
+.nomination__logo {
+  /* styles for the logo image */ }
+
+/* Add more styles as needed */
+
+/*# sourceMappingURL=theme.css.map */
