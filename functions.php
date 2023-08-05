@@ -18,3 +18,9 @@ function enqueue_child_theme_styles() {
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/css/style.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_theme_styles');
+function foce_child_enqueue_scripts() {
+    // Enqueue your JavaScript file
+    wp_enqueue_script('custom-scripts', get_stylesheet_directory_uri() . '/assets/js/fadin.js', array('jquery'), '1.0.0', true);
+}
+
+add_action('wp_enqueue_scripts', 'foce_child_enqueue_scripts');
