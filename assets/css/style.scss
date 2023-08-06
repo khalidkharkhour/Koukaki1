@@ -1,87 +1,147 @@
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+ /* CSS */
+/* CSS */
+
+.nomination, h3 {
+  background-image: url("./assets/images/oscars-2021.png");
+  background-position: 16% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
 }
 
-.video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#nomination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
-.bannerlogo {
-  position: sticky;
-  z-index: 1; 
-   opacity: 1;
-animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out
-}
+.nomination, h3 {
+  font-weight: 700;
+font-size: 42px;
+line-height: 52px;
+letter-spacing: -0.02em;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  .nomination__title {
+}
+$flotation-amplitude: 10px;
+$flotation-duration: 3s;
+
+.banner {
     position: relative;
+    overflow: hidden;
+    height: 100vh;
+    
+    .scroll-container {
+        position: sticky;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        
+    }
+   
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .bannerlogo {
+      position: relative;
+      bottom: 45%;
+      left: 51%;
+      transform: translateX(-50%);
+      z-index: 1;
+      width: 91%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: floatEffect $flotation-duration infinite ease-in-out;
+    }
+    
+    @keyframes floatEffect {
+        0%, 100% {
+            transform: translate(-50%, calc(50% - #{$flotation-amplitude}));
+        }
+        50% {
+            transform: translate(-50%, calc(50% + #{$flotation-amplitude}));
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .banner .video-background {
+        display: none;
+    }
+
+    .banner .bannerlogo {
+        display: block;
+        top: 50%;
+        animation: none; 
+    }
+}
+
+/* Effet de fondu en fade-in pour les sections */
+section {
+  animation: fade-in-out 15s ease 1 forwards; /* Une seule répétition avec l'état final maintenu */
+  opacity: 0;
+}
+
+@keyframes fade-in-out {
+  0%, 16.67% {
+    opacity: 0;
   }
-  .nomination {
-    position: relative;
-    padding: 150px 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px 0;
-    justify-content: center;
-    align-items: center;}
-    .nomination img {
-      height: 100%;}
-      img{
-        max-width: 100%;
-      }
-     
-        .nomination::before {
-          content: url("../images/Sunflower.png");
-          position: absolute;
-          left: 4em;
-          top: 0em;
-        }
-        
-        .nomination::after {
-          content: url("../images/orchid.png");
-          position: absolute;
-          right: -4em;
-          top: -3em;
-        }
-        
-        .site-footer::before {
-          content: '';
-        }
-        
-        .site-footer::after {
-          content: '';}
-          @keyframes move-up {
-            from {
-              transform: translateY(0);
-            }
-            to {
-              transform: translateY(-20px);
-            }
-          }
-          
-          @keyframes float {
-            0%, 100% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-          }
-          .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s, transform 0.3s;
-          
-            &.is-visible {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          
+  33.33%, 100% {
+    opacity: 1;
+  }
+}
+.story__article::after, .story h2::after,#studio h2::after,#studio h2::before,.story h2::after,.site-footer::after,.site-footer::before,.site-footer ul::after {
+  animation: rotate 10s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*
+.title {
+  animation: title 1s 1s forwards;
+  color: transparent;
+}
+
+@keyframes title {
+	0% {
+    transform: translate3d(-50%, 50%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 1;
+  }
+}*/

@@ -4,19 +4,26 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-<section class="banner fade-in " >
-    <div class="video-background">
-        <video autoplay loop muted playsinline>
-            <source src="<?php echo get_template_directory_uri() . '/assets/video/studio.mp4'; ?>" type="video/mp4">
-        </video>
-    </div>
-    <img class="bannerlogo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
-</section>
+    <section class="banner">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="<?php echo get_theme_file_uri() . '/assets/images/studio.mp4'; ?>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <div class="scroll-container">
+            <img class="bannerlogo " data-parallax="15" src="<?php echo get_theme_file_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+        </div>
+    </section>
+</main>
 
 
-    <section id="#story" class="story fade-in">
-        <h2>L'histoire</h2>
-        <article id="" class="story__article fad-in">
+
+
+    <section id="#story" class="story">
+        <h2 class ="title">L'histoire</h2>
+        <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
         <?php
@@ -29,9 +36,9 @@ get_header();
         );
         $characters_query = new WP_Query($args);
         ?>
-        <article id="characters fad-in">
+        <article id="characters">
             <div class="main-character">
-                <h3>Les personnages</h3>
+                <h3  class ="title">Les personnages</h3>
                 <?php
                 $main_character = $characters_query->posts[0];
                 echo '<figure>';
@@ -55,9 +62,9 @@ get_header();
                 ?>
             </div>
         </article>
-        <article id="place" class="story fade-in">
+        <article id="place">
             <div>
-                <h3>Le Lieu</h3>
+                <h3 class ="title" >Le Lieu</h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
 
@@ -65,22 +72,22 @@ get_header();
     </section>
 
 
-    <section id="studio" class="story fade-in">
-        <h2>Studio Koukaki</h2>
+    <section id="studio">
+        <h2 class ="title" >Studio Koukaki</h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
         </div>
     </section>
     <!-- LIGNE(S) AJOUTEE(S) -->
-    <section id="nomination" class="nomination fade-in">
-        <div class="nomination__title">
-            <img class="nomination__logo" src="<?php echo get_theme_file_uri() . '/assets/images/oscars-2021.png'; ?>" alt="Nomination aux Oscars 2022">
-            <h3>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
-        </div>
-        <div class="nomination__bg">
+    <section id="nomination" >
+        <div >
+           
+            <h3 class="nomination title  " >Fleurs d’oranger & chats errants<br> est nominé aux Oscars Short<br> Film Animated de 2022 !</h3>
+            </div>
+        <div >
             <img src="<?php echo get_theme_file_uri() . '/assets/images/orange_nomination_bg.png'; ?>" alt="fond du titre des nominations" data-text="Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !">
-        </div>
+            </div>
     </section>
 
 
