@@ -10,7 +10,7 @@
  */
 /* CSS */
 /* CSS */
-.nomination, h3 {
+#nomination .nomination {
   background-image: url("./assets/images/oscars-2021.png");
   background-position: 16% 50%;
   background-size: cover;
@@ -92,7 +92,7 @@
 }
 /* Effet de fondu en fade-in pour les sections */
 section {
-  animation: fade-in-out 15s ease 1 forwards; /* Une seule répétition avec l'état final maintenu */
+  animation: fade-in-out 0.3s ease 1 forwards; /* Une seule répétition avec l'état final maintenu */
   opacity: 0;
 }
 
@@ -116,19 +116,38 @@ section {
     transform: rotate(360deg);
   }
 }
-/*
-.title {
-  animation: title 1s 1s forwards;
-  color: transparent;
+.title,
+section {
+  animation: title 1s 1s forwards, section 1s 1s forwards;
+  transform: translate3d(-50%, 100%, 0);
+  opacity: 0;
+}
+
+.title.active,
+section.active {
+  animation: title 1s forwards, section 1s forwards;
 }
 
 @keyframes title {
-	0% {
-    transform: translate3d(-50%, 50%, 0);
+  0% {
+    transform: translate3d(-50%, 100%, 0);
     opacity: 0;
   }
   100% {
     transform: translate3d(-50%, -50%, 0);
     opacity: 1;
   }
-}*/
+}
+@keyframes section {
+  0% {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.site-footer::after, .site-footer::before {
+  display: none;
+}

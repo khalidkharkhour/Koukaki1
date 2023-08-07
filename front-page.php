@@ -22,7 +22,7 @@ get_header();
 
 
     <section id="#story" class="story">
-        <h2 class ="title">L'histoire</h2>
+        <h2><span class="nomination title  ">L'histoire</span></h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
@@ -38,7 +38,7 @@ get_header();
         ?>
         <article id="characters">
             <div class="main-character">
-                <h3  class ="title">Les personnages</h3>
+                <h3><span class="nomination title  ">Les personnages</span></h3>
                 <?php
                 $main_character = $characters_query->posts[0];
                 echo '<figure>';
@@ -64,7 +64,7 @@ get_header();
         </article>
         <article id="place">
             <div>
-                <h3 class ="title" >Le Lieu</h3>
+                <h3 ><span class="nomination title  ">Le Lieu</span></h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
 
@@ -73,7 +73,7 @@ get_header();
 
 
     <section id="studio">
-        <h2 class ="title" >Studio Koukaki</h2>
+        <h2  ><span class="nomination title  ">Studio Koukaki</span></h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
@@ -82,8 +82,10 @@ get_header();
     <!-- LIGNE(S) AJOUTEE(S) -->
     <section id="nomination" >
         <div >
-           
-            <h3 class="nomination title  " >Fleurs d’oranger & chats errants<br> est nominé aux Oscars Short<br> Film Animated de 2022 !</h3>
+
+           <img src ="<?php echo get_theme_file_uri(). "./assets/images/orchid.png";?>">
+           <img src = "<?php echo get_theme_file_uri() ."./assets/images/Sunflower.png";?>">
+            <h3 class="nomination" ><span class=" title "> d’oranger & chats errants<br> est nominé aux Oscars Short<br> Film Animated de 2022 !</span></h3>
             </div>
         <div >
             <img src="<?php echo get_theme_file_uri() . '/assets/images/orange_nomination_bg.png'; ?>" alt="fond du titre des nominations" data-text="Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !">

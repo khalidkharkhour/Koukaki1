@@ -16,11 +16,14 @@ if ( get_stylesheet() !== get_template() ) {
         return get_option( 'theme_mods_' . get_template(), $default );
     } );
 }
-
 function enqueue_custom_scripts() {
-    // Enqueue video.js script
-    wp_enqueue_script('video-script', get_theme_file_uri() . '/assets/js/video.js', array('jquery'), null, true);
+    // Enqueue jQuery library
+    wp_enqueue_script('jquery');
+
+    // Enqueue your custom scripts
+    wp_enqueue_script('video-script--1162327317640298663', get_theme_file_uri() . '/js/video.js', array('jquery'), true, true);
 }
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
   
