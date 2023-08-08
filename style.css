@@ -10,6 +10,11 @@
  */
 /* CSS */
 /* CSS */
+:root {
+  --rotate: 15s;
+  --posX: 0;
+}
+
 #nomination .nomination {
   background-image: url("./assets/images/oscars-2021.png");
   background-position: 16% 50%;
@@ -22,9 +27,42 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
-.nomination, h3 {
+figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.story__article::after,
+.story h2::after,
+#studio h2::before,
+#studio h2::after,
+figure > .flower,
+.site-footer ul::after {
+  animation: rotate-flower 15s linear infinite;
+}
+
+.story h2::after {
+  position: absolute;
+  left: 0.9em;
+  top: 8em;
+}
+
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.nomination,
+h3 {
   font-weight: 700;
   font-size: 42px;
   line-height: 52px;
@@ -32,9 +70,15 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.site-footer::after,
+.site-footer::before {
+  display: none;
+}
+
 .banner {
   position: relative;
   overflow: hidden;
+  /* Déplacez cette ligne ici */
   height: 100vh;
 }
 .banner .scroll-container {
@@ -43,7 +87,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* Déplacez cette ligne ailleurs ou supprimez-la */
+  /* Appliquer l'effet de parallaxe initial */
+  transform: translate(0, calc(-50% + 10px));
 }
 .banner .video-background {
   position: absolute;
@@ -60,10 +107,8 @@
 }
 .banner .bannerlogo {
   position: relative;
-  bottom: 45%;
-  left: 51%;
-  transform: translateX(-50%);
-  z-index: 1;
+  left: 50%;
+  filter: drop-shadow(0px 1.21px 0px #FFE600);
   width: 91%;
   height: auto;
   display: flex;
@@ -80,74 +125,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .banner .video-background {
-    display: none;
-  }
-  .banner .bannerlogo {
-    display: block;
-    top: 50%;
-    animation: none;
-  }
-}
-/* Effet de fondu en fade-in pour les sections */
-section {
-  animation: fade-in-out 0.3s ease 1 forwards; /* Une seule répétition avec l'état final maintenu */
-  opacity: 0;
-}
-
-@keyframes fade-in-out {
-  0%, 16.67% {
-    opacity: 0;
-  }
-  33.33%, 100% {
-    opacity: 1;
-  }
-}
-.story__article::after, .story h2::after, #studio h2::after, #studio h2::before, .story h2::after, .site-footer::after, .site-footer::before, .site-footer ul::after {
-  animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.title,
-section {
-  animation: title 1s 1s forwards, section 1s 1s forwards;
-  transform: translate3d(-50%, 100%, 0);
-  opacity: 0;
-}
-
-.title.active,
-section.active {
-  animation: title 1s forwards, section 1s forwards;
-}
-
-@keyframes title {
-  0% {
-    transform: translate3d(-50%, 100%, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 1;
-  }
-}
-@keyframes section {
-  0% {
-    transform: translate3d(0, 20px, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-.site-footer::after, .site-footer::before {
-  display: none;
+.scrolled {
+  animation: scrolled 1s 1s forwards;
 }
