@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="banner fade-in">
+    <section class="banner ">
         <div class="video-background">
             <video autoplay loop muted playsinline>
                 <source src="<?php echo get_theme_file_uri() . '/assets/images/studio.mp4'; ?>" type="video/mp4">
@@ -32,10 +32,10 @@ get_header();
         <img class="flower" src="<?php echo get_theme_file_uri() . '/assets/images/Sunflower.png'; ?>">
     </figure>
     
-    <section id="nomination" class="fade-in">
+    <section id="nomination" >
     <div>
        
-        <h3 class="nomination"><span class="title scrolled visible" id="snaptarget" > d’oranger & chats errants<br> est nominé aux Oscars Short<br> Film Animated de 2022 !</span></h3>
+        <h3 class="nomination fade-in "><span id="title"  > d’oranger & chats errants<br> est nominé aux Oscars Short<br> Film Animated de 2022 !</span></h3>
     </div>
     <div>   <img src="<?php echo get_theme_file_uri() . '/assets/images/orange_nomination_bg.png'; ?>" alt="fond du titre des nominations" data-text="Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !"></div>
     

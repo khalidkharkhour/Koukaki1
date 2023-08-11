@@ -1,8 +1,8 @@
 
-<section id="#story visible" class="story fade-in">
+<section id="#story " class="story"  >
 
-        <h2 class="nomination" ><span class="title scrolled " id="snaptarget" >L'histoire</span></h2>
-        <article id="" class="story__article">
+        <h2 class="nomination " ><span id="title" >L'histoire</span></h2>
+        <article id="" class="story__article hidden">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
         <?php
@@ -18,7 +18,7 @@
         <article id="characters">
            
             <div class="swiper-container">
-                     <h3 class="nomination" ><span class="title scrolled "id="snaptarget" >Les personnages</span></h3>
+                     <h3 class="nomination " ><span id="title" >Les personnages</span></h3>
         <div class="swiper-wrapper">
  
                 <?php
@@ -44,14 +44,14 @@
                 <img class="place--little_cloud move-cloud " src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
                 <!-- =================== -->
                 <div>
-                    <h3><span class=" title"id="snaptarget" >Le Lieu</span></h3>
+                    <h3><span id="title" >Le Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
             </article>
     </section>
-    <section id="studio" class="studio scroll-animation fade-in">
-            <h2><span class="title " id="snaptarget" >Studio Koukaki</span></h2>
+    <section id="studio" class="studio  ">
+            <h2><span id="title"  >Studio Koukaki</span></h2>
             
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
