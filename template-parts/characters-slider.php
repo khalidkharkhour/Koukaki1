@@ -1,7 +1,7 @@
 
 <section id="#story " class="story"  >
 
-        <h2 class="nomination " ><span id="title" >L'histoire</span></h2>
+        <h1 class="nomination " ><span id="title" >L'histoire</span></h1>
         <article id="" class="story__article hidden">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
@@ -18,7 +18,7 @@
         <article id="characters">
            
             <div class="swiper-container">
-                     <h3 class="nomination " ><span id="title" >Les personnages</span></h3>
+                     <h3 class="nomination" ><span id="title" >Les personnages</span></h3>
         <div class="swiper-wrapper">
  
                 <?php

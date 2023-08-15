@@ -212,7 +212,7 @@ function isElementVisible(element) {
 
 // Fonction pour activer l'animation lorsque l'élément devient visible
 function handleScrollAnimation() {
-  const titleElement = document.querySelector('#title');
+  const titleElement = document.querySelector('#title','#characters  span');
   
   if (isElementVisible(titleElement)) {
     titleElement.style.animation = 'openclose 1s linear forwards';

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
@@ -8,589 +7,85 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-/* CSS */
-/* CSS */
-:root {
-  --rotate: 15s;
-  --posX: O;
-}
-
-#nomination .nomination {
+ #nomination .nomination {
   background-image: url("./assets/images/oscars-2021.png");
   background-position: 16% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-#nomination {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-figure {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.story__article::after,
-.story h2::after,
-#studio h2::before,
-#studio h2::after,
-figure > .flower,
-.site-footer ul::after {
-  animation: rotate-flower var(--rotate) linear infinite;
-}
-
-.story h2::after {
+.story > h1 span {
   position: absolute;
-  left: 0.9em;
-  top: 8em;
+  color: #FFF5E9;
 }
 
-@keyframes rotate-flower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.nomination,
-h3 {
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 52px;
-  letter-spacing: -0.02em;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+h1 {
+  color: #FFF5E9;
+  font-size: 4.429rem;
+  text-align: center;
 }
 
-.site-footer::after,
-.site-footer::before {
-  display: none;
-}
-
-.banner {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-}
-.banner .scroll-container {
-  position: sticky;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(0, calc(-50% + 10px));
-}
-.banner .video-background {
+.story h1::before {
+  content: url("./assets/images/sunflower_leaves.png");
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-}
-.banner .video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  top: 1.8em;
+  z-index: -1;
 }
 
-.banner img {
-  width: 100% !important;
+*, ::before, ::after {
+  box-sizing: inherit;
 }
 
-.bannerlogo {
-  position: relative;
-  left: 50%;
-  filter: drop-shadow(0px 1.21px 0px #FFE600);
-  width: 91%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: floatEffect 3s infinite ease-in-out;
+.story > h1 {
+  color: transparent;
 }
 
-@keyframes floatEffect {
-  0%, 100% {
-    transform: translate(-50%, calc(50% - 10px));
-  }
-  50% {
-    transform: translate(-50%, calc(50% + 10px));
-  }
+.story h1::after {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: 41px;
+  top: 27rem;
 }
-/*
-.scrolled {
-  animation: scrolled 1s 1s ;
-}*/
+
+h1 {
+  color: #FFF5E9;
+  font-size: 5rem !important;
+  background-image: url("./assets/images/purple_title_bg.png");
+  background-color: #FFF5E9;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 12px 12px 12px 12px;
+  background-position: center;
+  text-align: center;
+  right: 50%;
+}
+
+.story {
+  margin-top: 5%;
+}
 .story #place {
   position: relative;
   background-image: url("./assets/images/Studio_Koukaki-image_place.png");
   z-index: -1;
 }
-
-#place .place--big_cloud,
-#place .place--little_cloud {
-  position: absolute;
-  filter: blur(12px);
-  -webkit-filter: blur(12px);
-  -moz-filter: blur(12px);
-  z-index: 2;
-}
-
-.move-cloud {
-  animation: moveCloud 10s infinite alternate;
-}
-
-@keyframes moveCloud {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-300px);
-  }
-}
-#place .place--big_cloud {
-  height: 122px;
-  top: 70px;
-  right: 90px;
-  transform: translateX(0);
-}
-
-#place .place--little_cloud {
-  height: 55px;
-  top: 250px;
-  right: 500px;
-  transform: translateX(0);
-}
-
-/*
-  $title-visibility-threshold: 0.5;
-
-.title  #nomination ,#story ,#studio , .story {
-  opacity: 1;
-  transition: opacity 0.5s;
-animation: Title 3s ease-in-out 3s;
-  &.visible {
-    opacity: 0;
-  }
-}
-
-@keyframes Title {
-  0% {
-    transform: translate3d(-50%, 50%, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 1;
-  }
-}
-
-@function snap-destination($currentPosition, $destination) {
-  $absDestination: abs($destination - $currentPosition);
-
-  @if $absDestination < 3 {
-    @return 0;
-  } @else if $absDestination < 200 {
-    @return $destination - $currentPosition + $currentPosition / 2;
-  } @else {
-    @return $destination;
-  }
-}*/
-.main-navigation.toggled ul {
-  display: flex !important;
-}
-
-#site-navigation {
-  position: relative;
-}
-
-.modal__burger {
-  position: absolute;
+#studio > div {
   display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  gap: 8px;
-  width: 40px;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  right: 3em;
-  cursor: pointer;
-}
-
-.modal__burger .line {
-  height: 2px;
-  background-color: #000;
-  display: block;
-  width: 100%;
-  margin: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.modal__burger.close .line:nth-child(2) {
-  opacity: 0;
-}
-
-.modal__burger.close .line:first-child {
-  transform: rotate(45deg) translate3d(8px, 6px, 0);
-}
-
-.modal__burger.close span.line:last-child {
-  transform: rotate(-45deg) translate3d(8px, -6px, 0);
-}
-
-.modal {
-  font-family: "Roboto Mono", monospace;
-  font-size: 0.4rem;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.modal h2,
-.modal li > a {
-  font-size: 3.1rem;
-}
-
-.modal .modal__content {
+  justify-content: space-between;; 
+  align-items: center; 
+  width: 66.66%;
+  margin: auto;
   position: relative;
-  width: 100%;
-  height: 91vh;
-  background: #FFF5E9;
-  font-size: 3em;
-  display: none;
-}
-
-.modal__content--logo {
-  margin: 40px;
-  width: 154px;
-  filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
-  -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
-  -moz-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
-}
-
-.modal__content ul {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  height: 300px;
-  gap: 1em;
-}
-
-.modal__content li > a:hover {
-  filter: drop-shadow(0px 0px 5px #ff5c00);
-  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
-  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
-}
-
-.modal__content--footer {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 40px;
-}
-
-.nomination {
-  overflow: hidden;
 }
 
 #studio > div::before {
   content: url("./assets/images/trple-leaf.png");
-  position: relative;
-  transform: translateX(25px);
-  bottom: 40px;
+  top: -15%;
 }
-
-#title {
-  position: relative;
-  width: 0;
-  opacity: 1;
-}
-
-section:hover,
-#title:hover,
-article:hover,
-.nomination:hover #title,
-.story:hover #title,
-.studio:hover #title {
-  animation: openclose 1s linear forwards;
-}
-
-section,
-article {
-  display: inline;
-}
-
-@keyframes openclose {
-  0% {
-    bottom: -10rem;
-    opacity: 0;
-  }
-  /*
-  30%{
-   bottom: -2rem;
-   opacity: 0;
-  }
-  50%{
-   bottom: -1rem;
-   opacity: 0;
-  }*/
-  100% {
-    bottom: 0;
-    opacity: 1;
-    /* Fade out */
-  }
-}
-.story #characters {
-  position: relative;
-  z-index: 0;
-  left: 50%;
-  width: 1800px;
-}
-
-.story #characters div {
-  right: 23%;
-  bottom: 5px;
-  position: relative;
-}
-
-.swiper-container {
-  width: 100%;
-  height: 640px;
-  opacity: 1;
-  margin-bottom: 7em;
-  overflow: hidden;
-}
-
-.swiper-slide figure {
-  display: inline-block;
-  width: 100%;
-  height: 300px;
-  position: relative;
-  object-fit: contain;
-}
-
-.story #characters div {
-  flex: none !important;
-}
-
-.story #characters h3 {
-  position: relative;
-  color: #FFF5E9;
-  opacity: 1;
-  z-index: 9999;
-  width: fit-content;
-  bottom: 2%;
-}
-
-/*
-section {
-  height: auto;
-
-}*/
-/*
-.fade-in , #studio h2 , #nomination .nomination ,openclose {
-  opacity: 1;
-  animation: scrollAnimation 1s ease-in-out 1s;
-
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-    transform: translateY(300px)
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-$opacity: 0;
-
-html,
-body {
-  @if $opacity ==0 {
-    background-color: $opacity;
-  }
-
-  @else if $opacity ==1 {
-    background-color: $opacity;
-  }
-
-  @else {
-    opacity: 1;
-  }
-}*/
 #studio h2::before {
-  content: url("./assets/images/random_flower.png");
-  position: absolute;
-  left: -0.1em;
+	content: url("./assets/images/random_flower.png");
+	position: absolute;
+	left: -1em;
+	top: 0;
 }
 
-@media all and (max-width: 700px) {
-  .modal__content::after,
-  .modal__content--story::after,
-  .modal__content--characters::after,
-  .modal__content--place::after,
-  .modal__content--footer::after {
-    content: "";
-  }
-}
-/*
-* > section {
-  animation-name: fadeInAnimation;
-  animation-duration: 15s;
-
-}*/
-@media all and (max-width: 700px) {
-  .main-navigation {
-    height: 80px;
-  }
-  .main-navigation ul {
-    display: flex !important;
-  }
-}
-@media all and (max-width: 700px) {
-  .modal__content--story::before,
-  .modal__content--place::before,
-  .modal__content--footer::before {
-    content: "";
-  }
-}
-@media all and (max-width: 920px) {
-  .banner img {
-    width: 70%;
-  }
-  .swiper-container {
-    display: none;
-  }
-}
-@media all and (max-width: 700px) {
-  .banner {
-    min-height: 600px !important;
-    height: 600px !important;
-  }
-  .swiper-container,
-  #characters {
-    display: none;
-  }
-  .banner .video-background {
-    opacity: 0;
-  }
-  .video-background {
-    opacity: 1;
-    min-width: 1200px !important;
-  }
-  .banner img {
-    width: 100%;
-  }
-}
-@media all and (max-width: 580px) {
-  .swiper-container,
-  #characters {
-    display: none;
-  }
-  .banner {
-    min-height: 400px !important;
-    height: 400px !important;
-  }
-  .banner .video-background {
-    opacity: 0;
-  }
-  .video-background {
-    opacity: 1;
-    min-width: 900px !important;
-  }
-}
-@media all and (max-width: 1192px) {
-  .nomination h3 {
-    font-size: 2.8rem;
-    line-height: 3rem;
-  }
-}
-@media all and (max-width: 920px) {
-  h2 {
-    font-size: 3.3rem;
-  }
-  .story > h2 span,
-  .studio > h2 span {
-    width: 100%;
-  }
-  .story #characters {
-    margin-top: 10px !important;
-  }
-  #characters > h3,
-  #place h3 {
-    width: 100%;
-  }
-  #nomination {
-    padding-top: 20px;
-  }
-  .nomination h3 {
-    font-size: 2.4rem;
-    line-height: 2.8rem;
-  }
-  #studio h2::before,
-  .nomination::before,
-  .nomination::after {
-    content: "";
-  }
-}
-@media all and (max-width: 700px) {
-  .swiper-container,
-  #characters {
-    display: none;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  .nomination h3 {
-    font-size: 1.9rem;
-    line-height: 2.5rem;
-  }
-  #characters span,
-  #place span {
-    top: 100px;
-  }
-}
-@media all and (max-width: 480px) {
-  .swiper-container,
-  #characters {
-    display: none;
-  }
-  h2 {
-    font-size: 2.4rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-  #characters span,
-  #place span {
-    top: 100px;
-  }
-  .nomination {
-    height: 200px;
-  }
-  .nomination h3 {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
-  }
-  .nomination .title {
-    max-width: 70%;
-  }
-}
