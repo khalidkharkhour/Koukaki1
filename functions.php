@@ -33,4 +33,32 @@ if ( get_stylesheet() !== get_template() ) {
         }
     }
 
-
+   
+    function is_mobile() {
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    
+        // Liste des chaînes d'agent utilisateur typiques des appareils mobiles
+        $mobile_agents = array(
+            'iPhone',          // Apple iPhone
+            'iPad',            // Apple iPad
+            'Android',         // 1.5+ Android
+            'webOS',           // Palm Pre Experimental
+            'BlackBerry',      // BlackBerry 9000
+            'iPod',            // Apple iPod touch
+            'Mobile',          // Generic Mobile
+            'Opera Mini',      // Opera Mini
+            'IEMobile',        // Internet Explorer Mobile
+            'Windows Phone',   // Microsoft Windows Phone
+        );
+    
+        // Vérifier si l'agent utilisateur correspond à un appareil mobile
+        foreach ($mobile_agents as $agent) {
+            if (stripos($user_agent, $agent) !== false) {
+                return true;
+            }
+        }
+    
+        return false;
+    }
+ 
+    

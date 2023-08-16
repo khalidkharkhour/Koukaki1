@@ -1,15 +1,19 @@
 <?php
-
 get_header();
+$should_use_fallback = is_mobile();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="banner ">
+    <section class="banner">
         <div class="video-background">
-            <video autoplay loop muted playsinline>
-                <source src="<?php echo get_theme_file_uri() . '/assets/images/studio.mp4'; ?>" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <?php if ($should_use_fallback) : ?>
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/banner.png'; ?>" alt="Fallback Image">
+            <?php else : ?>
+                <video autoplay loop muted playsinline>
+                    <source src="<?php echo get_theme_file_uri() . '/assets/images/studio.mp4'; ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <?php endif; ?>
         </div>
 
         <div class="scroll-container">
@@ -37,7 +41,7 @@ get_header();
 
     <section id="nomination">
         <div>
-            <h3 class="nomination fade-in "><span id="title"><?php echo $nomination_text['title']; ?></span></h3>
+            <h3 class="nomination  "><span id="title"><?php echo $nomination_text['title']; ?></span></h3>
         </div>
         <div> <img src="<?php echo $nomination_text['image']; ?>" alt="<?php echo $nomination_text['alt']; ?>" data-text="<?php echo $nomination_text['title']; ?>"></div>
     </section>

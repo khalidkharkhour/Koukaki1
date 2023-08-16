@@ -414,6 +414,14 @@ article {
 }
 
 @media (max-width: 700px) {
+  .story h1::after,
+  #nomination h3 {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
   .story h1::after {
     content: url("./assets/images/Sunflower.png");
     display: flex;
@@ -439,7 +447,8 @@ article {
     height: fit-content;
     display: none;
   }
-  .banner .video-background {
+  .banner .video-background,
+  .video-background {
     opacity: 0;
   }
   .video-background {
@@ -449,10 +458,6 @@ article {
   .banner img {
     width: 100%;
   }
-  .nomination h3 {
-    font-size: 1.9rem;
-    line-height: 2.5rem;
-  }
   #nomination {
     display: flex;
     flex-direction: column;
@@ -460,17 +465,11 @@ article {
     align-items: center;
     gap: 20px;
   }
-  .nomination,
-  h3 {
-    font-weight: 700;
-    font-size: 27px;
-    line-height: 38px;
-    letter-spacing: -0.02em;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .flower,
+  .nomination h3,
+  h2,
   #studio h2::before {
-    width: 9rem;
+    font-size: 1.9rem;
+    line-height: 2.5rem;
   }
   #studio > div::before {
     transform: rotate(90deg);
@@ -493,10 +492,10 @@ article {
     height: fit-content;
   }
   h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   #place .place--big_cloud {
     height: 50px;
@@ -504,34 +503,25 @@ article {
     right: 90px;
     transform: translateX(0);
   }
-  .nomination {
-    height: 200px;
-  }
-  .nomination h3 {
+  .nomination,
+  .nomination h3,
+  .nomination .title,
+  h3:not(.story .nomination h1) {
     font-size: 1.4rem;
     line-height: 1.6rem;
   }
-  .nomination .title {
-    max-width: 70%;
-  }
-  #nomination {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  .nomination,
-  h3 {
+  .nomination h3 h3:not(.story .nomination h1) {
     font-weight: 700;
-    font-size: 27px;
-    line-height: 38px;
-    letter-spacing: -0.02em;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-size: contain;
+    transform: scale(1);
+    line-height: 1;
+    font-size: larger;
   }
   .flower,
   #studio h2::before {
-    width: 9rem;
+    width: 4rem;
+    top: 3em;
   }
   #studio > div::before,
   #studio h2::after,
@@ -735,6 +725,13 @@ h1 {
     top: 33%;
   }
 }
+.story h1::after .site-footer ul::after {
+  background-size: contain;
+  transform: scale(0.5);
+}
+.story h1::after .site-footer {
+  padding-top: 9em;
+}
 @media (min-width: 700px) and (max-width: 1016px) {
   .story h1::after {
     left: 38%;
@@ -757,5 +754,24 @@ h1 {
   }
   #studio h2::after {
     display: none !important;
+  }
+  .site-footer ul::after {
+    background-size: contain;
+    transform: scale(0.5);
+  }
+}
+@media (min-width: 320px) and (max-width: 460px) {
+  .nomination h3,
+  h3:not(.story .nomination h1) {
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-size: contain;
+    transform: scale(1.6);
+    line-height: 1 !important;
+    font-size: medium !important;
+    line-height: 1;
+  }
+  .story #place h3 {
+    left: 3em !important;
   }
 }

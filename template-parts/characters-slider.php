@@ -1,3 +1,4 @@
+<?php require 'base-data.php'; ?>
 <section id="#story " class="story">
 
     <h1 class="nomination "><span id="title">L'histoire</span></h1>
@@ -39,8 +40,14 @@
     </article>
     <article id="place">
         <!-- LIGNE(S) AJOUTEE(S) -->
-        <img class="place--big_cloud move-cloud" src="<?php echo $cloud_images['big']; ?>" alt="Gros nuage qui passe">
-        <img class="place--little_cloud move-cloud" src="<?php echo $cloud_images['little']; ?>" alt="Petit nuage qui passe">
+        <?php foreach ($cloud_images as $cloud_type => $cloud_data) : ?>
+    <img 
+        class="<?php echo $cloud_data['class']; ?>" 
+        src="<?php echo $cloud_data['src']; ?>" 
+        alt="<?php echo $cloud_data['alt']; ?>"
+    >
+<?php endforeach; ?>
+
         <!-- =================== -->
         <div>
             <h3><span id="title">Le Lieu</span></h3>
@@ -49,7 +56,8 @@
 
     </article>
 </section>
-<?php include 'base-data.php'; ?>
+
+
 <section id="studio" class="studio  ">
     <?php echo $studio['title_studio']; ?>
 
