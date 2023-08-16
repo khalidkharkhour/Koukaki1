@@ -1,13 +1,7 @@
+/* Définition des variables CSS personnalisées */
 :root {
   --rotate: 15s;
   --posX: O;
-}
-
-#nomination .nomination {
-  background-image: url("./assets/images/oscars-2021.png");
-  background-position: 16% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #nomination {
@@ -25,17 +19,19 @@ figure {
   align-items: center;
   gap: 20px;
 }
+
 #studio h2::after {
-	content: url("./assets/images/flower.png");
-	position: absolute;
-	right: 1em;
-	top: 1.2em;
+  content: url("./assets/images/flower.png");
+  position: absolute;
+  right: 1em;
+  top: 1.2em;
 }
+
 .story__article::after,
 .story h1::after,
 #studio h2::before,
 #studio h2::after,
-figure > .flower,
+figure>.flower,
 .site-footer ul::after {
   animation: rotate-flower var(--rotate) linear infinite;
 }
@@ -50,10 +46,12 @@ figure > .flower,
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 div.swiper-container h3.nomination span#title {
   position: relative;
   z-index: index -10;
@@ -79,6 +77,7 @@ h3 {
   overflow: hidden;
   height: 100vh;
 }
+
 .banner .scroll-container {
   position: sticky;
   height: 100%;
@@ -87,6 +86,7 @@ h3 {
   justify-content: center;
   transform: translate(0, calc(-50% + 10px));
 }
+
 .banner .video-background {
   position: absolute;
   top: 0;
@@ -94,6 +94,7 @@ h3 {
   width: 100%;
   height: 100%;
 }
+
 .banner .video-background video {
   width: 100%;
   height: 100%;
@@ -121,7 +122,7 @@ h3 {
   animation: floatEffect 3s infinite ease-in-out;
 }
 
-.story > h1 span {
+.story>h1 span {
   position: absolute;
   color: #FFF5E9;
 }
@@ -140,11 +141,13 @@ h1 {
   z-index: -1;
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: inherit;
 }
 
-.story > h1 {
+.story>h1 {
   color: transparent;
 }
 
@@ -174,17 +177,17 @@ h1 {
 }
 
 @keyframes floatEffect {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(-50%, calc(50% - 10px));
   }
+
   50% {
     transform: translate(-50%, calc(50% + 10px));
   }
 }
-/*
-.scrolled {
-  animation: scrolled 1s 1s ;
-}*/
+
 .story #place {
   position: relative;
   background-image: url("./assets/images/Studio_Koukaki-image_place.png");
@@ -208,10 +211,12 @@ h1 {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-300px);
   }
 }
+
 #place .place--big_cloud {
   height: 122px;
   top: 70px;
@@ -226,40 +231,6 @@ h1 {
   transform: translateX(0);
 }
 
-/*
-  $title-visibility-threshold: 0.5;
-
-.title  #nomination ,#story ,#studio , .story {
-  opacity: 1;
-  transition: opacity 0.5s;
-animation: Title 3s ease-in-out 3s;
-  &.visible {
-    opacity: 0;
-  }
-}
-
-@keyframes Title {
-  0% {
-    transform: translate3d(-50%, 50%, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 1;
-  }
-}
-
-@function snap-destination($currentPosition, $destination) {
-  $absDestination: abs($destination - $currentPosition);
-
-  @if $absDestination < 3 {
-    @return 0;
-  } @else if $absDestination < 200 {
-    @return $destination - $currentPosition + $currentPosition / 2;
-  } @else {
-    @return $destination;
-  }
-}*/
 .main-navigation.toggled ul {
   display: flex !important;
 }
@@ -316,7 +287,7 @@ animation: Title 3s ease-in-out 3s;
 }
 
 .modal h2,
-.modal li > a {
+.modal li>a {
   font-size: 3.1rem;
 }
 
@@ -347,7 +318,7 @@ animation: Title 3s ease-in-out 3s;
   gap: 1em;
 }
 
-.modal__content li > a:hover {
+.modal__content li>a:hover {
   filter: drop-shadow(0px 0px 5px #ff5c00);
   -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
   -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
@@ -392,16 +363,17 @@ article {
     bottom: -10rem;
     opacity: 0;
   }
+
   100% {
     bottom: 0;
     opacity: 1;
-    /* Fade out */
   }
 }
+
 .flower1 {
   position: relative;
-  left: 4%;
-  top: 4rem;
+  left: 6%;
+  top: 6rem
 }
 
 .story #characters {
@@ -453,52 +425,55 @@ article {
 }
 
 @media (max-width: 700px) {
-  /* .modal__content::after,
-  .modal__content--story::after,
-  .modal__content--characters::after,
-  .modal__content--place::after,
-  .modal__content--footer::after {
-    content: '';
-  }*/
   .story h1::after {
     content: url("./assets/images/Sunflower.png");
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .main-navigation {
     height: 80px;
   }
+
   .main-navigation ul {
     display: flex !important;
   }
+
   .modal__content--story::before,
   .modal__content--place::before,
   .modal__content--footer::before {
     content: "";
   }
+
   .banner {
     min-height: 600px !important;
     height: 600px !important;
   }
+
   #characters {
     height: fit-content;
     display: none;
   }
+
   .banner .video-background {
     opacity: 0;
   }
+
   .video-background {
     opacity: 1;
     min-width: 1200px !important;
   }
+
   .banner img {
     width: 100%;
   }
+
   .nomination h3 {
     font-size: 1.9rem;
     line-height: 2.5rem;
   }
+
   #nomination {
     display: flex;
     flex-direction: column;
@@ -506,6 +481,7 @@ article {
     align-items: center;
     gap: 20px;
   }
+
   .nomination,
   h3 {
     font-weight: 700;
@@ -514,18 +490,22 @@ article {
     letter-spacing: -0.02em;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+
   .flower,
   #studio h2::before {
     width: 9rem;
   }
-  #studio > div::before {
+
+  #studio>div::before {
     transform: rotate(90deg);
   }
-  #studio > div::before,
+
+  #studio>div::before,
   #studio h2::after,
   #studio h2::before {
     display: none;
   }
+
   #place .place--big_cloud {
     height: 50px;
     top: 78px;
@@ -533,33 +513,42 @@ article {
     transform: translateX(0);
   }
 }
+
 @media (max-width: 480px) {
+
   .swiper-container,
   #characters {
     height: fit-content;
   }
+
   h2 {
     font-size: 2.4rem;
   }
+
   h3 {
     font-size: 2rem;
   }
+
   #place .place--big_cloud {
     height: 50px;
     top: 78px;
     right: 90px;
     transform: translateX(0);
   }
+
   .nomination {
     height: 200px;
   }
+
   .nomination h3 {
     font-size: 1.4rem;
     line-height: 1.6rem;
   }
+
   .nomination .title {
     max-width: 70%;
   }
+
   #nomination {
     display: flex;
     flex-direction: column;
@@ -567,6 +556,7 @@ article {
     align-items: center;
     gap: 20px;
   }
+
   .nomination,
   h3 {
     font-weight: 700;
@@ -575,16 +565,19 @@ article {
     letter-spacing: -0.02em;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+
   .flower,
   #studio h2::before {
     width: 9rem;
   }
-  #studio > div::before,
+
+  #studio>div::before,
   #studio h2::after,
   #studio h2::before {
     display: none;
   }
 }
+
 .story #characters h3 {
   margin-left: 12%;
 }
@@ -592,4 +585,229 @@ article {
 .story #place {
   min-height: 1247px;
   background-size: cover;
+}
+
+.story>h1 span {
+  position: absolute;
+  color: #FFF5E9;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 4.429rem;
+  text-align: center;
+}
+
+.story h1::before {
+  content: url("../images/sunflower_leaves.png");
+  position: absolute;
+  left: 0;
+  top: 1.8em;
+  z-index: -1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.story>h1 {
+  color: transparent;
+}
+
+.story h1::after {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 41px;
+  top: 27rem;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 5rem !important;
+  background-image: url("../images/purple_title_bg.png");
+  background-color: #FFF5E9;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 12px 12px 12px 12px;
+  background-position: center;
+  text-align: center;
+  right: 50%;
+}
+
+.story {
+  margin-top: 5%;
+}
+
+.story #place {
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  z-index: -1;
+}
+
+#studio>div {
+  display: flex;
+  justify-content: space-between;
+  ;
+  align-items: center;
+  width: 66.66%;
+  margin: auto;
+  position: relative;
+}
+
+#studio>div::before {
+  content: url("../images/trple-leaf.png");
+  top: -15%;
+}
+
+#studio h2::before {
+  content: url("../images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
+}
+
+#nomination .nomination {
+  background-image: url("../images/oscars-2021.png");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 6em;
+}
+
+.story>h1 span {
+  position: absolute;
+  color: #FFF5E9;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 4.429rem;
+  text-align: center;
+}
+
+.story h1::before {
+  content: url("../images/sunflower_leaves.png");
+  position: absolute;
+  left: 0;
+  top: 1.8em;
+  z-index: -1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.story>h1 {
+  color: transparent;
+}
+
+.story h1::after {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 41px;
+  top: 27rem;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 5rem !important;
+  background-image: url("../images/purple_title_bg.png");
+  background-color: #FFF5E9;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 12px 12px 12px 12px;
+  background-position: center;
+  text-align: center;
+  right: 50%;
+}
+
+.story {
+  margin-top: 5%;
+}
+
+.story #place {
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  z-index: -1;
+}
+
+#studio>div {
+  display: flex;
+  justify-content: space-between;
+  ;
+  align-items: center;
+  width: 66.66%;
+  margin: auto;
+  position: relative;
+}
+
+#studio>div::before {
+  content: url("../images/trple-leaf.png");
+  top: -15%;
+}
+
+#studio h2::before {
+  content: url("../images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
+}
+
+$isfleur : true;
+
+#studio h2::after {
+  @if $isfleur {
+    content: url("../images/flower.png");
+    right: -20em
+  }
+}
+
+.story h1::after {
+
+
+
+  @media (max-width: 700px) {
+
+    left: 34%;
+    top: 26%;
+  }
+
+  @media (min-width: 320px) and (max-width: 490px) {
+
+    left: 25%;
+    top: 33%;
+  }
+
+  @media (min-width: 700px) and (max-width: 1016px) {
+    left: 38%;
+    top: 7em;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1016px) {
+
+  .nomination,
+  h3 {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-transform: lowercase;
+  }
+
+  #studio>div::before {
+    display: none;
+  }
+
+  #studio h2::after {
+
+    display: none !important;
+  }
 }

@@ -21,26 +21,25 @@ get_header();
 
 
     <?php
-    // include_once  
+    // Inclure le fichier base-data.php
+    include_once 'template-parts/base-data.php';
+
+    // Inclure le fichier characters-slider.php
     get_template_part('template-parts/characters', 'slider');
     ?>
 
 
-
     <figure>
-        <img class="flower flower1" src="<?php echo get_theme_file_uri() . '/assets/images/Sunflower.png'; ?>">
-        <img class="flower" src="<?php echo get_theme_file_uri() . '/assets/images/orchid.png'; ?>">
-
+        <img class="flower flower1" src="<?php echo $flower_images['sunflower']; ?>">
+        <img class="flower" src="<?php echo $flower_images['orchid']; ?>">
     </figure>
+
 
     <section id="nomination">
         <div>
-
-            <h3 class="nomination fade-in "><span id="title"> d’oranger & chats errants<br> est nominé aux Oscars Short<br> Film Animated de 2022 !</span></h3>
+            <h3 class="nomination fade-in "><span id="title"><?php echo $nomination_text['title']; ?></span></h3>
         </div>
-        <div> <img src="<?php echo get_theme_file_uri() . '/assets/images/orange_nomination_bg.png'; ?>" alt="fond du titre des nominations" data-text="Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !"></div>
-
-
+        <div> <img src="<?php echo $nomination_text['image']; ?>" alt="<?php echo $nomination_text['alt']; ?>" data-text="<?php echo $nomination_text['title']; ?>"></div>
     </section>
 
     <!-- =================== -->

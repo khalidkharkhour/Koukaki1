@@ -1,13 +1,8 @@
+@charset "UTF-8";
+/* Définition des variables CSS personnalisées */
 :root {
   --rotate: 15s;
   --posX: O;
-}
-
-#nomination .nomination {
-  background-image: url("./assets/images/oscars-2021.png");
-  background-position: 16% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #nomination {
@@ -145,7 +140,9 @@ h1 {
   z-index: -1;
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: inherit;
 }
 
@@ -186,10 +183,6 @@ h1 {
     transform: translate(-50%, calc(50% + 10px));
   }
 }
-/*
-.scrolled {
-  animation: scrolled 1s 1s ;
-}*/
 .story #place {
   position: relative;
   background-image: url("./assets/images/Studio_Koukaki-image_place.png");
@@ -231,40 +224,6 @@ h1 {
   transform: translateX(0);
 }
 
-/*
-  $title-visibility-threshold: 0.5;
-
-.title  #nomination ,#story ,#studio , .story {
-  opacity: 1;
-  transition: opacity 0.5s;
-animation: Title 3s ease-in-out 3s;
-  &.visible {
-    opacity: 0;
-  }
-}
-
-@keyframes Title {
-  0% {
-    transform: translate3d(-50%, 50%, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 1;
-  }
-}
-
-@function snap-destination($currentPosition, $destination) {
-  $absDestination: abs($destination - $currentPosition);
-
-  @if $absDestination < 3 {
-    @return 0;
-  } @else if $absDestination < 200 {
-    @return $destination - $currentPosition + $currentPosition / 2;
-  } @else {
-    @return $destination;
-  }
-}*/
 .main-navigation.toggled ul {
   display: flex !important;
 }
@@ -398,13 +357,12 @@ article {
   100% {
     bottom: 0;
     opacity: 1;
-    /* Fade out */
   }
 }
 .flower1 {
   position: relative;
-  left: 4%;
-  top: 4rem;
+  left: 6%;
+  top: 6rem;
 }
 
 .story #characters {
@@ -456,13 +414,6 @@ article {
 }
 
 @media (max-width: 700px) {
-  /* .modal__content::after,
-  .modal__content--story::after,
-  .modal__content--characters::after,
-  .modal__content--place::after,
-  .modal__content--footer::after {
-    content: '';
-  }*/
   .story h1::after {
     content: url("./assets/images/Sunflower.png");
     display: flex;
@@ -595,4 +546,216 @@ article {
 .story #place {
   min-height: 1247px;
   background-size: cover;
+}
+
+.story > h1 span {
+  position: absolute;
+  color: #FFF5E9;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 4.429rem;
+  text-align: center;
+}
+
+.story h1::before {
+  content: url("../images/sunflower_leaves.png");
+  position: absolute;
+  left: 0;
+  top: 1.8em;
+  z-index: -1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.story > h1 {
+  color: transparent;
+}
+
+.story h1::after {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 41px;
+  top: 27rem;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 5rem !important;
+  background-image: url("../images/purple_title_bg.png");
+  background-color: #FFF5E9;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 12px 12px 12px 12px;
+  background-position: center;
+  text-align: center;
+  right: 50%;
+}
+
+.story {
+  margin-top: 5%;
+}
+
+.story #place {
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  z-index: -1;
+}
+
+#studio > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 66.66%;
+  margin: auto;
+  position: relative;
+}
+
+#studio > div::before {
+  content: url("../images/trple-leaf.png");
+  top: -15%;
+}
+
+#studio h2::before {
+  content: url("../images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
+}
+
+#nomination .nomination {
+  background-image: url("../images/oscars-2021.png");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 6em;
+}
+
+.story > h1 span {
+  position: absolute;
+  color: #FFF5E9;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 4.429rem;
+  text-align: center;
+}
+
+.story h1::before {
+  content: url("../images/sunflower_leaves.png");
+  position: absolute;
+  left: 0;
+  top: 1.8em;
+  z-index: -1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.story > h1 {
+  color: transparent;
+}
+
+.story h1::after {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 41px;
+  top: 27rem;
+}
+
+h1 {
+  color: #FFF5E9;
+  font-size: 5rem !important;
+  background-image: url("../images/purple_title_bg.png");
+  background-color: #FFF5E9;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 12px 12px 12px 12px;
+  background-position: center;
+  text-align: center;
+  right: 50%;
+}
+
+.story {
+  margin-top: 5%;
+}
+
+.story #place {
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  z-index: -1;
+}
+
+#studio > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 66.66%;
+  margin: auto;
+  position: relative;
+}
+
+#studio > div::before {
+  content: url("../images/trple-leaf.png");
+  top: -15%;
+}
+
+#studio h2::before {
+  content: url("../images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
+}
+
+#studio h2::after {
+  content: url("../images/flower.png");
+  right: -20em;
+}
+
+@media (max-width: 700px) {
+  .story h1::after {
+    left: 34%;
+    top: 26%;
+  }
+}
+@media (min-width: 320px) and (max-width: 490px) {
+  .story h1::after {
+    left: 25%;
+    top: 33%;
+  }
+}
+@media (min-width: 700px) and (max-width: 1016px) {
+  .story h1::after {
+    left: 38%;
+    top: 7em;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1016px) {
+  .nomination,
+  h3 {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-transform: lowercase;
+  }
+  #studio > div::before {
+    display: none;
+  }
+  #studio h2::after {
+    display: none !important;
+  }
 }
