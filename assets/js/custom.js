@@ -113,3 +113,15 @@ function handleScrollAnimation() {
     titleElement.style.animation = 'openclose 1s linear forwards';
   }
 }
+window.addEventListener('scroll', function() {
+  const clouds = document.querySelectorAll('.cloud');
+  const scrollPosition = window.scrollY;
+
+  clouds.forEach(function(cloud) {
+
+    const displacement = scrollPosition * 0.5; 
+
+    
+    cloud.style.transform = `translateX(${displacement}px)`;
+  });
+});
